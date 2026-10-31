@@ -21,6 +21,15 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Organizar estructura de proyecto
+        run: |
+          mkdir -p src
+          # Mueve los archivos de componentes dentro de src si quedaron sueltos
+          [ -f App.tsx ] && mv *.tsx src/ 2>/dev/null || true
+          [ -f App.css ] && mv *.css src/ 2>/dev/null || true
+          # Mantiene main.tsx accesible
+          if [ -f src/main.tsx ]; then echo "Estructura ok"; fi
+
       - name: Instalar dependencias y compilar
         run: |
           npm install --legacy-peer-deps
