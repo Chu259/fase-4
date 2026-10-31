@@ -5,6 +5,7 @@ on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout del codigo
         uses: actions/checkout@v4
@@ -22,7 +23,7 @@ jobs:
 
       - name: Instalar dependencias y compilar
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Capacitor Android
@@ -41,4 +42,3 @@ jobs:
         with:
           name: Capturador-Gerencia-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
-          
