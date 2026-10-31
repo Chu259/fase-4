@@ -1,0 +1,6 @@
+{
+  "name": "Capturador Gerencia",
+  "description": "Aplicación web móvil para captura de códigos de barras (en vivo y por lotes), reconocimiento de productos con IA y exportación a JSON para inventarios.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
